@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="format-detection" content="telephone=no"/><!--//禁止将数字变为电话号码-->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/swipeslider.css" rel="stylesheet"><!--轮播器-->
+
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/swipeslider.min.js"></script><!--轮播器-->
+    <script type="text/javascript">
+        $(function () {
+            $('#full_feature').swipeslider();//轮播器
+
+            var touchtime = new Date().getTime();//双击返回顶部
+            $(".header").on("click", function () {
+                $('html , body').animate({
+                    scrollTop: 0
+                }, 'slow');
+//                if (new Date().getTime() - touchtime < 500) {//双击
+//                    console.log("dblclick");
+//
+//                } else {
+//                    touchtime = new Date().getTime();
+//                    console.log("click")
+//                }
+            });
+        })
+
+    </script>
+    <title>home</title>
+</head>
+<body>
+<?php
+require __DIR__ . '.\model\ownerDAO.class.php';
+session_start();
+$plot_name=(new ownerDAO())->findById($_SESSION['id']);
+//print_r($plot_name) ;
+?>
+<div class="page_container">
+    <div class="content">
+        <div class="header clearfix">
+            <!-- 位置图标 -->
+            <div class="place">
+                <img src="images/home/地点.png" width="30px" height="30px">
+                <p><?php echo $plot_name['plot_name'] ?></p>
+            </div>
+            <!--通讯录 -->
+            <div class="call">
+                <img src="images/home/电话.png" width="30px" height="30px">
+                <p>通讯录</p>
+            </div>
+            <!--通知 -->
+            <div class="call">
+                <img src="images/home/通知.png" width="30px" height="30px">
+                <p>通知</p>
+            </div>
+        </div>
+        <div class="carousel">
+            <figure id="full_feature" class="swipslider" style="touch-action: none;">
+                <!--chrome 监听touch类事件报错,去除滑动时默认现象产生-->
+                <ul class="sw-slides">
+                    <li class="sw-slide">
+                        <img src="images/home/小区图片.jfif" alt="" style="width: 95%;height: 100%">
+                    </li>
+                    <li class="sw-slide">
+                        <img src="images/home/春.jpg" alt="" style="width: 95%;height: 100%">
+                    </li>
+                    <li class="sw-slide">
+                        <img src="images/home/夏.jpg" alt="" style="width: 95%;height: 100%">
+                    </li>
+                    <li class="sw-slide">
+                        <img src="images/home/秋.jpg " alt="" style="width: 95%;height: 100%">
+                    </li>
+                    <li class="sw-slide">
+                        <img src="images/home/冬.jpg" alt="" style="width: 95%;height: 100%">
+                    </li>
+                </ul>
+            </figure>
+        </div>
+        <div class="zhiju">
+            <div style="background-color:#C8DEEE; height: 20px; width: 10px;  float: left;"></div>
+            <p>智居服务</p>
+        </div>
+        <div class="service">
+            <div class="row">
+                <div class=""><a class="app" href="payment.html">
+                    <img class="application" src="images/home/生活缴费.png">
+                    <div class="app_name">生活缴费</div>
+                </a> <a class="app row2">
+                    <img class="application" src="images/home/店铺.png">
+                    <div class="app_name">周边小店</div>
+                </a></div>
+                <div class=""><a class="app">
+                    <img class="application" src="images/home/门禁.png">
+                    <div class="app_name">门禁</div>
+                </a> <a class="app row2">
+                    <img class="application" src="images/home/小区.png">
+                    <div class="app_name">爱心驿站</div>
+                </a></div>
+                <div class=""><a class="app">
+                    <img class="application" src="images/home/保洁.png">
+                    <div class="app_name">保洁家政</div>
+                </a><a class="app row2">
+                    <img class="application" src="images/home/意见反馈.png">
+                    <div class="app_name">意见反馈</div>
+                </a></div>
+                <div class=""><a class="app">
+                    <img class="application" src="images/home/快递.png">
+                    <div class="app_name">快递</div>
+                </a> <a class="app row2">
+                    <img class="application" src="images/home/停车入库.png">
+                    <div class="app_name">停车</div>
+                </a></div>
+                <div class=""><a class="app">
+                    <img class="application" src="images/home/修理.png">
+                    <div class="app_name">修理</div>
+                </a> <a class="app row2" href="service.html">
+                    <img class="application" src="images/home/更多%20.png">
+                    <div class="app_name">更多</div>
+                </a></div>
+            </div>
+        </div>
+        <div class="zhiju">
+            <div style="background-color:#C8DEEE; height: 20px; width: 10px;  float: left;"></div>
+            <p>小区新闻</p>
+        </div>
+        <div class="news">
+            <div style="width: 58%;float: left;padding-right: 5px;">
+                <p style="text-align: left;  margin-top: 10px;margin-left: 10px;height: 15px;">
+                    缴费新通知！！！
+                </p>
+                <p style="text-align: left; font-size: 12px; color: #666666; margin-top: 10px;margin-left: 10px;">
+                    啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                <div style="text-align: left; font-size: 12px; color: #666666;margin-top: 10px;margin-left: 10px;">
+                    <span>1008次阅读</span> <span style="float: right;">2019-12-24</span>
+                </div>
+            </div>
+            <div style="height: 100px;  float: right ;display: flex;align-items: center ">
+                <img src="images/home/小区6.jfif" height="83px;" width="140px;"></div>
+        </div>
+        <div class="news">
+            <div style="width: 58%;float: left;padding-right: 5px;">
+                <p style="text-align: left;  margin-top: 10px;margin-left: 10px;height: 15px;">
+                    缴费新通知！！！
+                </p>
+                <p style="text-align: left; font-size: 12px; color: #666666; margin-top: 10px;margin-left: 10px;">
+                    啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                <div style="text-align: left; font-size: 12px; color: #666666;margin-top: 10px;margin-left: 10px;">
+                    <span>1008次阅读</span> <span style="float: right;">2019-12-24</span>
+                </div>
+            </div>
+            <div style="height: 100px;  float: right ;display: flex;align-items: center ">
+                <img src="images/home/小区6.jfif" height="83px;" width="140px;"></div>
+        </div>
+        <div class="news">
+            <div style="width: 58%;float: left;padding-right: 5px;">
+                <p style="text-align: left;  margin-top: 10px;margin-left: 10px;height: 15px;">
+                    缴费新通知！！！
+                </p>
+                <p style="text-align: left; font-size: 12px; color: #666666; margin-top: 10px;margin-left: 10px;">
+                    啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                <div style="text-align: left; font-size: 12px; color: #666666;margin-top: 10px;margin-left: 10px;">
+                    <span>1008次阅读</span> <span style="float: right;">2019-12-24</span>
+                </div>
+            </div>
+            <div style="height: 100px;  float: right ;display: flex;align-items: center ">
+                <img src="images/home/小区6.jfif" height="83px;" width="140px;"></div>
+        </div>
+        <div style="margin-bottom: 0.2rem;">
+            <p style="color: #666666;font-size: 13px; margin-top: 0.2rem;">已经到底了哦！</p>
+        </div>
+        <ul id="bottomNav">
+            <li><a class="homeActive " href="home.html"></a></li>
+            <li><a class="forum" href="forum.html"></a></li>
+            <li><a class="me" href="more.html"></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

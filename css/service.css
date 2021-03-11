@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100px !important;
+}
+
+body {
+    text-align: center;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page_container {
+    padding-top: 0.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+.ele_header img {
+    width: 20px;
+    height: 20px;
+}
+
+.ele_header {
+    height: 0.5rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px 0 #cccccc4f;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.background {
+    margin: 0 auto;
+    width: 100%;
+    height: 1.6rem;
+    background: url("../images/home/02.jpg");
+    display: inline-block;
+    line-height: 1.6rem;
+    opacity: 0.7;
+}
+
+.tab {
+    margin-top: 0.1rem !important;
+    height: 20px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.15rem;
+    margin-bottom: 0.2rem;
+}
+
+.application {
+    width: 0.4rem;
+    height: 0.4rem;
+}
+
+.app_name {
+    color: rgb(95, 95, 95);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.app {
+    height: 0.65rem;
+    display: block;
+}
+
+.row2 {
+    margin-top: 0.16rem;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link href="css/more.css" rel="stylesheet">
+    <title>more</title>
+</head>
+<body>
+<?php
+require __DIR__ . '.\model\ownerDAO.class.php';
+session_start();
+$res=(new ownerDAO())->findById2($_SESSION['id']);
+//print_r($plot_name) ;
+?>
+<div class="page_container">
+    <div class="content">
+        <div class="head">
+            <div class="site"><a href="site.html"><img src="images/more/设置.png" width="25" height="25"></a></div>
+            <div class="avatar">
+                <img src="images/more/touxiang.png" width="50" height="50" style="margin-top: 0.025rem">
+            </div>
+            <div class="owner">
+                <div><?php echo $res['owner_name'] ?></div>
+                <div style="margin-top: 0.05rem;letter-spacing: 1px;font-size: 0.01rem"><?php echo $res['room'] ?></div>
+            </div>
+        </div>
+        <div class="features">
+            <div class="f_row">
+                <img src="images/more/动态.png" width="20" height="20" style="float: left;margin-left: 0.075rem;margin-top: 0.03rem">
+                <span>我的动态</span>
+                <img src="images/more/箭头.png" width="20" height="20" style="float: right;margin-right:0.075rem;margin-top: 0.03rem">
+            </div>
+            <div class="f_row">
+                <img src="images/more/回复.png" width="20" height="20" style="float: left;margin-left: 0.075rem;margin-top: 0.03rem">
+                <span>我的回复</span>
+                <img src="images/more/箭头.png" width="20" height="20" style="float: right;margin-right:0.075rem;margin-top: 0.03rem">
+            </div>
+            <div class="f_row">
+                <img src="images/more/记录.png" width="20" height="20" style="float: left;margin-left: 0.075rem;margin-top: 0.03rem">
+                <span>缴费记录</span>
+                <img src="images/more/箭头.png" width="20" height="20" style="float: right;margin-right:0.075rem;margin-top: 0.03rem">
+            </div>
+            <div class="f_row">
+                <img src="images/more/手势密码.png" width="20" height="20" style="float: left;margin-left: 0.075rem;margin-top: 0.03rem">
+                <span>手势密码设置</span>
+                <img src="images/more/箭头.png" width="20" height="20" style="float: right;margin-right:0.075rem;margin-top: 0.03rem">
+            </div>
+            <div class="f_row">
+                <img src="images/more/帮助与反馈.png" width="20" height="20" style="float: left;margin-left: 0.075rem;margin-top: 0.03rem">
+                <span>帮助与反馈</span>
+                <img src="images/more/箭头.png" width="20" height="20" style="float: right;margin-right:0.075rem;margin-top: 0.03rem">
+            </div>
+        </div>
+        <ul id="bottomNav">
+            <li><a class="home " href="home.html"></a></li>
+            <li><a class="forum" href="forum.html"></a></li>
+            <li><a class="meActive" href="more.html"></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

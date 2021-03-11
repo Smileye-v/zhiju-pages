@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100px !important;
+}
+
+body {
+    text-align: center;
+    font-size: 14px;
+}
+
+.page_container {
+    padding-top: 0.5rem;
+    padding-bottom: 0.6rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    visibility: hidden;
+}
+
+.header {
+    height: 0.5rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px 0 #cccccc4f;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*位置图标*/
+.place {
+    float: left;
+    padding-left: 0.1rem;
+    padding-top: 0.1rem;
+}
+
+.place p {
+    float: right;
+    line-height: 0.3rem;
+    margin-left: 0.1rem;
+}
+
+/*通讯录和通知*/
+.call {
+    float: right;
+    padding-top: 0.05rem;
+    line-height: 0.1rem;
+    margin-right: 0.12rem;
+}
+
+.call p {
+    font-size: 9px;
+    color: #aaaaaa;
+}
+
+.carousel {
+    margin-top: 0.07rem;
+}
+
+.zhiju {
+    margin-top: 0.15rem;
+    height: 0.2rem;
+    margin-bottom: 0.15rem;
+    margin-left: 0.13rem;
+}
+
+.zhiju p {
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    margin-left: 0.1rem;
+    color: #235F86;
+}
+
+.service {
+    box-shadow: 0 0 5px #aaaaaa4d;
+    width: 95%;
+    height: 1.8rem;
+    border: 1px solid #aaaaaa2e;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.14rem;
+}
+
+.application {
+    width: 0.4rem;
+    height: 0.4rem;
+}
+
+.app_name {
+    color: rgb(95, 95, 95);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.app {
+    height: 0.65rem;
+    display: block;
+}
+
+.row2 {
+    margin-top: 0.16rem;
+}
+
+.news {
+    margin: 0 auto;
+    width:95%;
+    height: 100px;
+    border-bottom: 1px solid #D7D7D7;
+}
+
+/*底部导航栏*/
+
+#bottomNav {
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 3px 0 #cccccc4f;
+}
+
+#bottomNav li {
+    float: left;
+    width: 33%;
+    height:0.6rem;
+    list-style-type: none;
+}
+
+#bottomNav a {
+    display: inline-block;
+    /*高度自适应*/
+    height: 0.6rem;
+    width: 100%;
+}
+
+.home {
+    background: url("../images/home/home.svg") no-repeat 50% 100%;
+}
+
+.homeActive {
+    background: url("../images/home/homeActive.svg") no-repeat 50% 100%;
+}
+
+.forum {
+    background: url("../images/home/lingliquan.svg") no-repeat 50% 100%;
+}
+
+.forumActive {
+    background: url("../images/home/lingliquanActive.svg") no-repeat 50% 100%;
+}
+
+.me {
+    background: url("../images/home/me.svg") no-repeat 50% 100%;
+}
+
+.meActive {
+    background: url("../images/home/meActive.svg") no-repeat 50% 100%;
+}

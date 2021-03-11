@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100px !important;
+}
+
+body {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* 导航行 */
+.pay_header {
+    width: 100%;
+    height: 1.4rem;
+    background-color: #2f7fb138;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.18rem;
+}
+
+.header_black {
+    margin-left: 0.18rem;
+    position: fixed;
+    z-index: 1000;
+}
+
+.header_black img {
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.pay_header:nth-child(1) {
+    color: #235F86;
+    font-weight: 600;
+    font-size: 20px;
+    justify-content: space-between;
+}
+
+/* 快捷支付 */
+
+.q_out {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -0.8rem;
+}
+
+.pay_quick {
+    width: 90%;
+    height: 1.6rem;
+    background-color: #ffffff;
+    border: 1px solid rgba(209, 227, 238, 50%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.electric {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 10px;
+    border-image: linear-gradient(to right, #ffffff, #F2F2F2, #ffffff) 1 30;
+}
+
+/* 添加缴费 */
+
+.add_out {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.add_pay {
+    margin-top:0.3rem;
+    width: 90%;
+}
+
+.add_pay h3 {
+    text-align: left;
+    font-weight: 100;
+    color: #2364B0;
+    font-size: 18px;
+}
+
+.pay_icon {
+    width: 100%;
+    border: 1px solid rgba(209, 227, 238, 50%);
+    border-radius: 0.1rem;
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.all {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.3rem 0;
+}
+.all a{
+    height: 0.65rem;
+    display: block;
+}
+.second_row{
+    margin-top: 0.3rem;
+}
+.opic {
+    width: 0.4rem;
+    height: 0.4rem;
+}
+
+.ocon {
+    color: rgb(95, 95, 95);
+    font-size: 13px;
+    margin-top: 0.05rem;
+}
+
+/* 底部提示 */
+
+.endallpay {
+    position: fixed;
+    bottom: 0.44rem;
+    width: 100%;
+}
+
+.lifepay_end {
+    display: flex;
+    justify-content: center;
+    color: #b8b8b8;
+    font-size: 12px;
+    letter-spacing: 0.02rem;
+}
+
+.lifepay_end div {
+    padding: 0 0.1rem;
+    border-right: 1px solid #b8b8b880;
+}
+
+.lifepay_end div:last-child {
+    border-right: none;
+}
+
+
+

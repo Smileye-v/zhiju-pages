@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>success</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 100px !important;
+        }
+
+        body {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            box-shadow: 0px 2px 3px 0px #cccccc54;
+            font-size: 18px;
+        }
+
+        .result {
+            margin-top: 0.2rem;
+        }
+
+        .result div {
+            color: #0075be;;
+            margin-top: 0.1rem;
+            font-size: 17px;
+            letter-spacing: 2px;
+        }
+    </style>
+    <script type="text/javascript">
+        //使用匿名函数方法
+        function countDown(){
+
+            var time = document.getElementById("Time");
+            //alert(time.innerHTML);
+            //获取到id为time标签中的内容，现进行判断
+            if(time.innerHTML == 0){
+                //等于0时清除计时
+                window.location.href="payment.php" ;
+            }else{
+                time.innerHTML = time.innerHTML-1;
+            }
+        }
+        //1000毫秒调用一次
+        window.setInterval("countDown()",1000);
+    </script>
+</head>
+<body>
+<div class="header">
+    支付结果
+</div>
+<div class="result">
+    <img src="images/logo.png" width="100px">
+    <div>支付成功</div>
+</div>
+<div style="margin-top: 0.2rem">页面将在<span id="Time" style="color: #0075be;">3</span>秒后跳转...</div>
+</body>
+</html>

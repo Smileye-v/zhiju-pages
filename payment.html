@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/life_payment.css">
+    <title>Payment</title>
+</head>
+<body>
+<?php
+require __DIR__ . '.\model\ownerDAO.class.php';
+session_start();
+$res = (new ownerDAO())->findBill($_SESSION['id']);
+//print_r($res);
+?>
+<!-- 导航行 -->
+<div class="pay_header">
+    <div class="header_black"><a href="home.html"><img src="images/payment/返回.png" alt="" style="padding-top: 3px;"></a>
+    </div>
+    <div style="width: 100%">生活缴费</div>
+</div>
+<!-- 快捷缴费 -->
+<div class="q_out">
+    <div class="pay_quick">
+        <!-- 第一个快捷支付 -->
+        <a href="electric.php" style="text-decoration: none; color:#000000">
+            <div class="electric" style="border-bottom: 1px solid #F2F2F2;">
+                <img src="images/payment/电费服务.png" alt="" width="25px">
+                <div style="font-size: 18px;width: 15%;">电费</div>
+                <div style="width: 55%;text-align: left;"><?php echo $res['owner_number'] ?>（自动缴费）</div>
+                <?php if ($res['status'] == 0) {
+                    echo ' <img src="images/payment/错.png" alt="" width="20">';
+                }else{
+                    echo ' <img src="images/payment/对勾.png" alt="" width="20">';
+                } ?>
+
+            </div>
+        </a>
+        <!-- 第二个快捷支付 -->
+        <a href="#" style="text-decoration: none; color:#000000">
+            <div class="electric">
+                <img src="images/payment/水.png" alt="" width="25px">
+                <div style="font-size: 18px;width: 15%;">水费</div>
+                <div style="width: 55%;text-align: left;">201804b304</div>
+                <img src="images/payment/对勾.png" alt="" width="20px">
+            </div>
+        </a>
+    </div>
+</div>
+<!-- 添加缴费 -->
+<div class="add_out">
+    <div class="add_pay">
+        <h3>添加缴费</h3>
+        <div class="pay_icon">
+            <div class="all">
+                <!-- 1 -->
+                <div>
+                    <a>
+                        <div>
+                            <img class="opic" src="images/payment/电费服务.png">
+                            <div class="ocon">电费</div>
+                        </div>
+                    </a>
+                    <a class="second_row">
+                        <div>
+                            <img class="opic" src="images/payment/机顶盒.png">
+                            <div class="ocon">机顶盒</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 2 -->
+                <div>
+                    <a>
+                        <div>
+                            <img class="opic" src="images/payment/水.png">
+                            <div class="ocon">水费</div>
+                        </div>
+                    </a>
+                    <a class="second_row">
+                        <div>
+                            <img class="opic" src="images/payment/物业费用出账.png">
+                            <div class="ocon">物业费</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 3 -->
+                <div>
+                    <a>
+                        <div>
+                            <img class="opic" src="images/payment/燃气.png">
+                            <div class="ocon">停车费</div>
+                        </div>
+                    </a>
+                    <a class="second_row">
+                        <div>
+                            <img class="opic" src="images/payment/油卡充值.png">
+                            <div class="ocon">油卡充值</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 4 -->
+                <div>
+                    <a>
+                        <div>
+                            <img class="opic" src="images/payment/固话费.png">
+                            <div class="ocon">固话费</div>
+                        </div>
+                    </a>
+                    <a class="second_row">
+                        <div>
+                            <img class="opic" src="images/payment/ETC.png">
+                            <div class="ocon">ETC办理</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 5 -->
+                <div>
+                    <a>
+                        <div>
+                            <img class="opic" src="images/payment/宽带.png">
+                            <div class="ocon">宽带费</div>
+                        </div>
+                    </a>
+                    <a class="second_row">
+                        <div>
+                            <img class="opic" src="images/payment/话费充值.png">
+                            <div class="ocon">手机话费</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 底部提示 -->
+<div class="endallpay">
+    <div class="lifepay_end">
+        <div>缴费记录</div>
+        <div>未缴记录</div>
+        <div>帮助中心</div>
+    </div>
+</div>
+</body>
+</html>
