@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="css/userLogin.css">
     <title>login</title>
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript">
+<!--    <script type="text/javascript">
         $(function () {
             var userID = JSON.parse(localStorage.getItem('data'));
             if (userID){
             $('#owner_number').val(userID['owner_number']);}
         });
-    </script>
+    </script> -->
 </head>
 <body>
 <div class="logo">
 </div>
 <p class="logo_text">智居</p>
-<form method="post" action="index.html">
+<form>
 <div class="am_list">
     <div class="am-list-item">
         <input type="text" class="am-input-required" name="owner_number" placeholder="手机号/邮箱/业主号" id="owner_number" value="">
@@ -35,7 +35,7 @@
     <a href="#" class="f-right">注册账号</a>
 </div>
 <div class="login">
-    <button id="btn_login" type="submit">登录</button>
+    <button id="btn_login" type="button"  onclick="window.location.href = './index.html'">登录</button>
 </div</form>
 </body>
 </html>

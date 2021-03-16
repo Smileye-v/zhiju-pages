@@ -7,12 +7,7 @@
     <title>more</title>
 </head>
 <body>
-<?php
-require __DIR__ . '.\model\ownerDAO.class.php';
-session_start();
-$res=(new ownerDAO())->findById2($_SESSION['id']);
-//print_r($plot_name) ;
-?>
+
 <div class="page_container">
     <div class="content">
         <div class="head">

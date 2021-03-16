@@ -1,111 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link href="css/electric.css" rel="stylesheet">
-    <title>electric</title>
-</head>
-<body>
-<?php
-require __DIR__ . '.\model\ownerDAO.class.php';
-session_start();
-$res = (new ownerDAO())->findBill($_SESSION['id']);
-//print_r($res);
-?>
-<div class="header">
-    <a href="payment.html"><img src="images/home/返回.png" width="20" height="20"></a>
-    <div style="width: 60%;font-size: 18px">电费</div>
-    <img src="images/payment/记录.png" width="20" height="20">
-</div>
-<!-- 缴纳电费 -->
-<div class="ele_all">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link href="css/electric.css" rel="stylesheet">
+		<title>electric</title>
+	</head>
+	<body>
+		<div class="header">
+			<a href="payment.html"><img src="images/home/返回.png" width="20" height="20"></a>
+			<div style="width: 60%;font-size: 18px">电费</div>
+			<img src="images/payment/记录.png" width="20" height="20">
+		</div>
+		<!-- 缴纳电费 -->
+		<div class="ele_all">
 
-    <!-- 缴费内容 -->
-    <div class="contentm">
-        <div>
-            <p>缴费单位</p>
-            <p>撸猫供电局</p>
-        </div>
-        <div>
-            <p>户号</p>
-            <p><?php echo $res['owner_number'] ?></p>
-        </div>
-        <div>
-            <p>户主</p>
-            <p><?php echo $res['owner_name'] ?></p>
-        </div>
-        <div>
-            <p>住址</p>
-            <p><?php echo $res['room'] ?></p>
-        </div>
-        <div>
-            <p>该月电费</p>
-            <p style="color: #ffc107"><span>￥</span><span><?php echo $res['bill'] ?></span></p>
-        </div>
-        <div>
-            <p>自动缴费</p>
-            <p style="color: #00a9f1">已开通 ></p>
-        </div>
-    </div>
+			<!-- 缴费内容 -->
+			<div class="contentm">
+				<div>
+					<p>缴费单位</p>
+					<p>撸猫供电局</p>
+				</div>
+				<div>
+					<p>户号</p>
+					<p>
+						owner_number
+					</p>
+				</div>
+				<div>
+					<p>户主</p>
+					<p>
+						owner_name
+					</p>
+				</div>
+				<div>
+					<p>住址</p>
+					<p>
+					add
+					</p>
+				</div>
+				<div>
+					<p>该月电费</p>
+					<p style="color: #ffc107"><span>￥</span><span>
+							0</span></p>
+				</div>
+				<div>
+					<p>自动缴费</p>
+					<p style="color: #00a9f1">已开通 ></p>
+				</div>
+			</div>
 
-    <!-- 用户进行缴费 -->
-    <?php if ($res['status'] == 0){
-        echo '<div class="co_button">
-        <a href="javascript:show()">
-            <button>我要缴费</button>
-        </a>
-        <div>找人代付</div>
-    </div>';
-    } ?>
+			<!-- 用户进行缴费 -->
+			<div class="co_button">
+				<a href="javascript:show()">
+					<button>我要缴费</button>
+				</a>
+				<div>找人代付</div>
+			</div>
 
-</div>
-<!-- 底部提示 -->
-<div class="endallpay">
-    <div class="lifepay_end">
-        <div>缴费记录</div>
-        <div>未缴记录</div>
-        <div>帮助中心</div>
-    </div>
-</div>
+		</div>
+		<!-- 底部提示 -->
+		<div class="endallpay">
+			<div class="lifepay_end">
+				<div>缴费记录</div>
+				<div>未缴记录</div>
+				<div>帮助中心</div>
+			</div>
+		</div>
 
 
-<!-- 弹出框 -->
-<div id="eject">
-    <div class="content">
-        <form action="./controller/pay.php">
-            <div class="ej_header">确认付款<a href="javascript:hide()">
-                    <img id="cancal" src="images/payment/取消.png" width="25"></a></div>
-            <div>
-                <div style="font-size: 47px;line-height: 131px;">￥<?php echo $res['bill'] ?></div>
-                <div class="ej_contnet">
-                    <div class="ej_conson">
-                        <div>支付方式</div>
-                        <div>支付宝</div>
-                    </div>
-                    <div class="ej_conson">
-                        <div>支付账号</div>
-                        <div>151******92</div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <a href="">
-                    <button type="submit" style="margin-top: 50px;">确认付款</button>
-                </a></div>
-        </form>
-    </div>
-</div>
-<!-- 弹出框js -->
-<script type="text/javascript">
-    var eject = document.getElementById('eject');
-    function show() {
-        eject.style.display = "block";
-    }
-    function hide() {
-        eject.style.display = "none";
-    }
-</script>
+		<!-- 弹出框 -->
+		<div id="eject">
+			<div class="content">
+				<form action="#">
+					<div class="ej_header">确认付款<a href="javascript:hide()">
+							<img id="cancal" src="images/payment/取消.png" width="25"></a></div>
+					<div>
+						<div style="font-size: 47px;line-height: 131px;">￥
+							0
+						</div>
+						<div class="ej_contnet">
+							<div class="ej_conson">
+								<div>支付方式</div>
+								<div>支付宝</div>
+							</div>
+							<div class="ej_conson">
+								<div>支付账号</div>
+								<div>151******92</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<a href="#">
+							<button type="button" style="margin-top: 50px;"  onclick="window.location.href = './success.html'">确认付款</button>
+						</a></div>
+				</form>
+			</div>
+		</div>
+		<!-- 弹出框js -->
+		<script type="text/javascript">
+			var eject = document.getElementById('eject');
 
-</body>
+			function show() {
+				eject.style.display = "block";
+			}
+
+			function hide() {
+				eject.style.display = "none";
+			}
+		</script>
+
+	</body>
 </html>

@@ -7,12 +7,6 @@
     <title>Payment</title>
 </head>
 <body>
-<?php
-require __DIR__ . '.\model\ownerDAO.class.php';
-session_start();
-$res = (new ownerDAO())->findBill($_SESSION['id']);
-//print_r($res);
-?>
 <!-- 导航行 -->
 <div class="pay_header">
     <div class="header_black"><a href="index.html"><img src="images/payment/返回.png" alt="" style="padding-top: 3px;"></a>
@@ -23,17 +17,12 @@ $res = (new ownerDAO())->findBill($_SESSION['id']);
 <div class="q_out">
     <div class="pay_quick">
         <!-- 第一个快捷支付 -->
-        <a href="electric.php" style="text-decoration: none; color:#000000">
+        <a href="electric.html" style="text-decoration: none; color:#000000">
             <div class="electric" style="border-bottom: 1px solid #F2F2F2;">
                 <img src="images/payment/电费服务.png" alt="" width="25px">
                 <div style="font-size: 18px;width: 15%;">电费</div>
-                <div style="width: 55%;text-align: left;"><?php echo $res['owner_number'] ?>（自动缴费）</div>
-                <?php if ($res['status'] == 0) {
-                    echo ' <img src="images/payment/错.png" alt="" width="20">';
-                }else{
-                    echo ' <img src="images/payment/对勾.png" alt="" width="20">';
-                } ?>
-
+                <div style="width: 55%;text-align: left;">201804b304（自动缴费）</div>
+                <img src="images/payment/错.png" alt="" width="20">
             </div>
         </a>
         <!-- 第二个快捷支付 -->
